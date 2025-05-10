@@ -1,0 +1,50 @@
+.card {
+  background: linear-gradient(to right, #fff3b0, #ffe799);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+  color: #333;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-sub {
+  font-size: 14px;
+  color: #666;
+}
+
+.card-rating {
+  color: green;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.card-offer {
+  color: #007aff;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.card-shop {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 8px;
+}

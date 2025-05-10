@@ -1,0 +1,26 @@
+.filters {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.filter-group {
+  margin-bottom: 20px;
+}
+
+.filter-group h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 5px;
+  cursor: pointer;
+  color: #555;
+}
+
+.filter-group input[type="radio"] {
+  margin-right: 8px;
+}
