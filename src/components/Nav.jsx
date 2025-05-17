@@ -1,15 +1,17 @@
-// src/components/Nav.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import './Nav.css';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useCart } from '../components/CartContext';  // fixed path
 import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
-  const [cartCount] = useState(0);
+  const { cartItems } = useCart();
   const navigate = useNavigate();
 
+  const totalQuantity = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   const handleSignIn = () => {
-    navigate('/signin');  // client-side navigation
+    navigate('/signin');
   };
 
   return (
@@ -29,10 +31,11 @@ const Nav = () => {
         <button className="btn btn--outline" onClick={handleSignIn}>
           Sign In
         </button>
-        <div className="navbar__cart">
-          <FaShoppingCart size={20} />
-          <span className="cart-count">{cartCount}</span>
-        </div>
+        <div className="navbar__cart" onClick={() => console.log('Open Cart')}>
+  <FaShoppingCart size={20} />
+  {totalQuantity > 0 && <span className="cart-count">{totalQuantity}</span>}
+</div>
+
       </div>
     </nav>
   );
