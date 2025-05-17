@@ -8,8 +8,10 @@ import Categories from './components/Categories';
 import AllCategories from './components/AllCategories';
 import Footer from './components/Footer';
 import SignIn from './components/Signin';
-import Pizza from './components/Pizza';  // Note: Capital P
-import Cart from './components/Cart';    // <-- Import Cart here
+import Pizza from './components/Pizza';
+import Cart from './components/Cart';
+import Checkout from './components/CheckOut';
+import ThankYou from './components/ThankYou';
 
 import { CartProvider } from './components/CartContext';
 
@@ -27,11 +29,13 @@ function App() {
                 <Herosection />
                 <Categories />
                 <AllCategories />
-                <Pizza />
-                <Cart />   {/* Now Cart is defined and imported */}
               </>
             }
           />
+          <Route path="/pizza" element={<Pizza />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/thankyou" element={<ThankYou />} />
           <Route path="/signin" element={<SignIn />} />
         </Routes>
         <Footer />

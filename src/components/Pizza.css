@@ -61,15 +61,45 @@
 }
 
 .buy-now-button {
-  background: #ff5e57;
+  background-color: #ff4d4d;
   color: white;
-  padding: 8px 16px;
+  padding: 8px 14px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: bold;
+  transition: background 0.3s ease;
 }
 
 .buy-now-button:hover {
-  background: #ff3d3d;
+  background-color: #e60000;
 }
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.quantity-button {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.quantity-button:hover {
+  background-color: #cc0000;
+}
+
+.quantity-count {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+
