@@ -12,7 +12,8 @@ import Pizza from './components/Pizza';
 import Cart from './components/Cart';
 import Checkout from './components/CheckOut';
 import ThankYou from './components/ThankYou';
-
+import OrderSuccess from './components/OrderSuccess';
+import Payment from './components/Payment';
 import { CartProvider } from './components/CartContext';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Router>
         <Header />
         <Nav />
+
         <Routes>
           <Route
             path="/"
@@ -35,9 +37,12 @@ function App() {
           <Route path="/pizza" element={<Pizza />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/order-success" element={<OrderSuccess />} />
           <Route path="/thankyou" element={<ThankYou />} />
           <Route path="/signin" element={<SignIn />} />
         </Routes>
+
         <Footer />
       </Router>
     </CartProvider>

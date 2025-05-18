@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import './Categories.css';
-import Pizza from './Pizza';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Categories.css'
 import {
   FaPizzaSlice, FaHamburger, FaIceCream, FaCoffee, FaCarrot,
   FaDrumstickBite, FaUtensils, FaFish, FaLeaf, FaCookieBite,
@@ -8,9 +8,10 @@ import {
   FaAppleAlt, FaGlassMartiniAlt, FaBreadSlice, FaCocktail,
   FaPepperHot, FaCheese
 } from 'react-icons/fa';
+import './Categories.css';
 
 const Categories = () => {
-  const [showPizza, setShowPizza] = useState(false);
+  const navigate = useNavigate();
 
   const categoryList = [
     { icon: <FaPizzaSlice />, label: 'Pizza', image: '/images/pizza.jpeg' },
@@ -37,8 +38,9 @@ const Categories = () => {
 
   const handleCategoryClick = (label) => {
     if (label === 'Pizza') {
-      setShowPizza(true);
+      navigate('/pizza'); // Navigate to Pizza page
     }
+    // You can add navigation for other categories here if needed
   };
 
   return (
@@ -63,9 +65,6 @@ const Categories = () => {
           </div>
         ))}
       </div>
-
-      {/* Show pizza details below categories if toggled */}
-      {showPizza && <Pizza onClose={() => setShowPizza(false)} />}
 
       <div className="categories__button">
         <a href="#all-categories" className="btn btn--outline">

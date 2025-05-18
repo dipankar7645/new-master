@@ -1,8 +1,13 @@
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+
   background-color: #fff;
   border-bottom: 1px solid #eaeaea;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -40,7 +45,7 @@
 
 .btn {
   padding: 0.5rem 1rem;
-  border-radius: 25px;  /* Makes the button rounded */
+  border-radius: 25px; /* Rounded buttons */
   text-decoration: none;
   font-weight: 500;
   transition: background-color 0.3s ease, color 0.3s ease;

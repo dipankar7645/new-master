@@ -41,7 +41,7 @@ const Cart = () => {
                 <div>
                   <h3>{item.name}</h3>
                   <p>
-                    Quantity: 
+                    Quantity:
                     <button className="qty-btn" onClick={() => handleDecrease(item)}>−</button>
                     <span className="qty-number">{item.quantity}</span>
                     <button className="qty-btn" onClick={() => handleIncrease(item)}>+</button>
@@ -53,8 +53,7 @@ const Cart = () => {
             ))}
           </ul>
           <h3>Total: ₹{totalPrice}</h3>
-          <button className="clear-cart" onClick={clearCart}>Clear Cart</button>
-          <button className="checkout-btn" onClick={handleCheckout}>Proceed to Checkout</button>
+          <button className="clear-cart" onClick={handleCheckout}>Buy Now</button>
         </>
       )}
     </section>

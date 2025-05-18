@@ -1,4 +1,6 @@
+// Pizza.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import this
 import { useCart } from './CartContext';
 import './Pizza.css';
 
@@ -12,13 +14,8 @@ const pizzaTypes = [
   { name: 'Onion Paneer', image: '/images/pizza7.jpg', description: 'Onions, paneer & cheese burst', rating: 4, price: 239 },
 ];
 
-const renderStars = (rating) => (
-  <span>
-    {'★'.repeat(rating)}{'☆'.repeat(5 - rating)}
-  </span>
-);
-
-const Pizza = ({ onClose }) => {
+const Pizza = () => {
+  const navigate = useNavigate(); // Use this hook for navigation
   const { cartItems, addToCart, increaseQuantity, decreaseQuantity } = useCart();
 
   const getPizzaQuantity = (pizzaName) => {
@@ -28,30 +25,39 @@ const Pizza = ({ onClose }) => {
 
   return (
     <section className="pizza-section">
-      <button className="back-button" onClick={onClose}>← Back to Menu</button>
+      <button className="back-button" onClick={() => navigate('/')}>← Back to Menu</button>
       <h2 className="pizza-title">🍕 Pizza Varieties</h2>
       <div className="pizza-list">
         {pizzaTypes.map((pizza, index) => {
           const quantity = getPizzaQuantity(pizza.name);
           return (
             <div className="pizza-card" key={index}>
-              <img src={pizza.image} alt={pizza.name} className="pizza-image" />
-              <h3 className="pizza-name">{pizza.name}</h3>
-              <p className="pizza-description">{pizza.description}</p>
-              <div className="pizza-rating">{renderStars(pizza.rating)}</div>
-              <p className="pizza-price">₹{pizza.price}</p>
-
-              {quantity === 0 ? (
-                <button className="buy-now-button" onClick={() => addToCart(pizza)}>
-                  Add to Cart
-                </button>
-              ) : (
-                <div className="quantity-controls">
-                  <button className="quantity-button" onClick={() => decreaseQuantity(pizza.name)}>−</button>
-                  <span className="quantity-count">{quantity}</span>
-                  <button className="quantity-button" onClick={() => increaseQuantity(pizza.name)}>+</button>
+              <div className="pizza-left">
+                <div className="pizza-title-row">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Veg_symbol.svg/2048px-Veg_symbol.svg.png"
+                    alt="veg"
+                    className="veg-icon"
+                  />
+                  <h3 className="pizza-name">{pizza.name}</h3>
+                  <span className="pizza-price">₹{pizza.price}</span>
                 </div>
-              )}
+                <div className="pizza-rating">⭐ {pizza.rating}.0 ({pizza.rating + 3})</div>
+                <p className="pizza-description">Now in 3 New Flavours - {pizza.description}</p>
+              </div>
+
+              <div className="pizza-right">
+                <img src={pizza.image} alt={pizza.name} className="pizza-image" />
+                {quantity === 0 ? (
+                  <button className="add-button" onClick={() => addToCart(pizza)}>ADD</button>
+                ) : (
+                  <div className="quantity-controls">
+                    <button onClick={() => decreaseQuantity(pizza.name)} className="quantity-button">−</button>
+                    <span className="quantity-count">{quantity}</span>
+                    <button onClick={() => increaseQuantity(pizza.name)} className="quantity-button">+</button>
+                  </div>
+                )}
+              </div>
             </div>
           );
         })}
