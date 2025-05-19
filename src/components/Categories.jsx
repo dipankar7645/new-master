@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Categories.css'
+import './Categories.css';
 import {
   FaPizzaSlice, FaHamburger, FaIceCream, FaCoffee, FaCarrot,
   FaDrumstickBite, FaUtensils, FaFish, FaLeaf, FaCookieBite,
@@ -8,7 +8,6 @@ import {
   FaAppleAlt, FaGlassMartiniAlt, FaBreadSlice, FaCocktail,
   FaPepperHot, FaCheese
 } from 'react-icons/fa';
-import './Categories.css';
 
 const Categories = () => {
   const navigate = useNavigate();
@@ -29,7 +28,7 @@ const Categories = () => {
     { icon: <FaGlassWhiskey />, label: 'Lassi', image: '/images/lassi.jpeg' },
     { icon: <FaMugHot />, label: 'Tea', image: '/images/tea.jpg' },
     { icon: <FaWineGlassAlt />, label: 'Rasmalai', image: '/images/rasmalia.jpeg' },
-    { icon: <FaGlassMartiniAlt />, label: 'Cold coffee ', image: '/images/coffee.jpg' },
+    { icon: <FaGlassMartiniAlt />, label: 'Cold coffee', image: '/images/coffee.jpg' },
     { icon: <FaAppleAlt />, label: 'Biryani', image: '/images/biryani.jpeg' },
     { icon: <FaCocktail />, label: 'Cutlet', image: '/images/cutlet.jpg' },
     { icon: <FaPepperHot />, label: 'Vada Pav', image: '/images/vadapav.jpeg' },
@@ -38,17 +37,17 @@ const Categories = () => {
 
   const handleCategoryClick = (label) => {
     if (label === 'Pizza') {
-      navigate('/pizza'); // Navigate to Pizza page
+      navigate('/pizza');
+    } else if (label === 'Burgers') {
+      navigate('/burger');
     }
-    // You can add navigation for other categories here if needed
+    // Add more navigation routes as needed
   };
 
   return (
     <section className="categories">
       <h2 className="categories__title">Explore Our Menu</h2>
-      <p>
-        Food the extraordinary with our extensive menu, packed with options from savory starters to indulgent desserts.
-      </p>
+      <p>Food the extraordinary with our extensive menu, packed with options from savory starters to indulgent desserts.</p>
 
       <div className="categories__list">
         {categoryList.map((cat, index) => (

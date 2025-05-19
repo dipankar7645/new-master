@@ -1,0 +1,86 @@
+.food-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+.food-left {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.food-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.food-price {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #00b26f;
+}
+
+.food-rating {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #f7a800;
+}
+
+.food-description {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.food-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+}
+
+.food-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-controls button {
+  background-color: #00b26f;
+  color: white;
+  padding: 6px 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.quantity-controls button:hover {
+  background-color: #019e5d;
+}
+
+.quantity-controls span {
+  font-weight: bold;
+  font-size: 1.1rem;
+}

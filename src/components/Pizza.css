@@ -138,3 +138,97 @@
   font-size: 16px;
   font-weight: 600;
 }
+
+.pizza-search {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 1rem;
+  outline-color: #00b26f;
+  transition: border-color 0.3s ease;
+}
+
+.pizza-search:focus {
+  border-color: #00b26f;
+}
+
+.rating-filter {
+  margin-bottom: 1.5rem;
+}
+
+.rating-filter button {
+  margin-right: 8px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.rating-filter button:hover {
+  border-color: #00b26f;
+  background-color: #e6f7ef;
+}
+
+.rating-filter button.active {
+  border: 2px solid #00b26f;
+  background-color: #d1f0d8;
+  font-weight: 700;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap; /* Responsive wrap */
+}
+
+.pizza-search {
+  flex: 1 1 250px;
+  min-width: 200px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+  margin-left: 240px;
+}
+
+.pizza-search:focus {
+  border-color: #00b26f;
+}
+
+.rating-filter {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.rating-filter button {
+  /* padding: 6px 14px; */
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.rating-filter button:hover {
+  border-color: #00b26f;
+  background-color: #e6f7ef;
+}
+
+.rating-filter button.active {
+  border: 2px solid #00b26f;
+  background-color: #d1f0d8;
+  font-weight: 700;
+}

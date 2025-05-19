@@ -16,7 +16,12 @@ const Nav = () => {
 
   return (
     <nav className="navbar">
-      <div className="navbar__logo" onClick={() => navigate('/')}>CraveCart</div>
+      <div className="navbar__logo" onClick={() => navigate('/')}>
+  <img src="/images/CraveCart.png" alt="CraveCart Logo" className="navbar__logo-img" />
+  CraveCart
+</div>
+
+      {/* <div className="navbar__logo" onClick={() => navigate('/')}>CraveCart</div> */}
 
       <ul className="navbar__links">
         <li><span onClick={() => navigate('/')} className="nav-link">Home</span></li>
