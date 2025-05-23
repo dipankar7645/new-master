@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Categories.css';
 import {
@@ -11,6 +11,8 @@ import {
 
 const Categories = () => {
   const navigate = useNavigate();
+  const [showAllText, setShowAllText] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const categoryList = [
     { icon: <FaPizzaSlice />, label: 'Pizza', image: '/images/pizza.jpeg' },
@@ -40,14 +42,45 @@ const Categories = () => {
       navigate('/pizza');
     } else if (label === 'Burgers') {
       navigate('/burger');
+    } else if (label === 'Ice Cream') {
+      navigate('/icecream');
     }
-    // Add more navigation routes as needed
+    // Add more routes if needed here
+    else {
+      alert('Category page not implemented yet.');
+    }
+  };
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    const search = searchTerm.trim().toLowerCase();
+
+    // Find category matching the search term (case insensitive)
+    const foundCategory = categoryList.find(cat => cat.label.toLowerCase() === search);
+
+    if (foundCategory) {
+      handleCategoryClick(foundCategory.label);
+    } else {
+      alert('No matching category found.');
+    }
   };
 
   return (
     <section className="categories">
       <h2 className="categories__title">Explore Our Menu</h2>
       <p>Food the extraordinary with our extensive menu, packed with options from savory starters to indulgent desserts.</p>
+
+      {/* SEARCH BAR */}
+      <form onSubmit={handleSearchSubmit} className="categories__search-form" style={{ marginBottom: '1rem' }}>
+        <input
+          type="text"
+          placeholder="Search for a dish or category..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="categories__search-input"
+        />
+        <button type="submit" className="btn btn--primary" style={{ marginLeft: '0.5rem' }}>Search</button>
+      </form>
 
       <div className="categories__list">
         {categoryList.map((cat, index) => (
@@ -66,9 +99,12 @@ const Categories = () => {
       </div>
 
       <div className="categories__button">
-        <a href="#all-categories" className="btn btn--outline">
-          See All Cuisines & Dishes
-        </a>
+        <button
+          className="btn btn--outline"
+          onClick={() => setShowAllText(prev => !prev)}
+        >
+          {showAllText ? 'Show Less' : 'See All Cuisines & Dishes'}
+        </button>
       </div>
     </section>
   );

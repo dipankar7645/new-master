@@ -1,90 +1,136 @@
+/* Categories.css */
+
 .categories {
-  padding: 2rem;
-  background-color: #fff;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
 }
 
 .categories__title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #e63946; /* A nice red accent */
+}
+
+.categories p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
 }
 
 .categories__list {
   display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  padding: 1rem 0;
-  scrollbar-width: thin;
-  scrollbar-color: #ccc transparent;
+  overflow-x: auto;       /* Enable horizontal scrolling */
+  gap: 1rem;              /* Space between items */
+  padding-bottom: 0.5rem; /* Some space for scrollbar */
+  scrollbar-width: thin;  /* For Firefox */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
-/* Optional: Hide scrollbars on WebKit (Chrome/Safari) */
 .categories__list::-webkit-scrollbar {
-  height: 8px;
+  height: 8px;            /* Scrollbar height */
 }
-.categories__list::-webkit-scrollbar-track {
-  background: transparent;
-  /* padding-left: 30%;
-  padding-right: 30%; */
-  /* margin-left: 50%; */
-}
+
 .categories__list::-webkit-scrollbar-thumb {
-  background-color: #ccc;
+  background-color: rgba(0,0,0,0.3);
   border-radius: 4px;
 }
 
 .category__item {
-  min-width: 130px;
-  flex-shrink: 0;
-  background: #f8f8f8;
-  border-radius: 10px;
-  overflow: hidden;
+  flex: 0 0 auto;         /* Prevent items from shrinking */
+  width: 120px;           /* Fixed width for each item */
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  padding: 0.5rem;
-  transition: transform 0.3s;
+  cursor: pointer;
 }
 
-.category__item:hover {
-  transform: translateY(-5px);
+
+.category__item:hover,
+.category__item:focus {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 .category__image-container {
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
+  width: 100%;
+  padding-top: 100%; /* Maintain 1:1 aspect ratio */
+  position: relative;
+  border-radius: 50%;  /* Make the container round */
   overflow: hidden;
-  border-radius: 50%;
-  border: 2px solid #ddd; /* optional for styling */
+  margin-bottom: 0.75rem;
 }
 
-.category__image {
+.category__image-container img.category__image {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 50%; /* Make the image itself round */
 }
+.category__image-container img.category__image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
 .category__label {
-  margin-top: 0.5rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  user-select: none;
 }
 
+/* Button container */
 .categories__button {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
 }
 
-.btn.btn--outline {
-  padding: 0.75rem 1.5rem;
-  border: 2px solid #000;
-  border-radius: 25px;
-  background: transparent;
-  cursor: pointer;
+.btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  color: #000;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.btn.btn--outline:hover {
-  background-color: #000;
+.btn--outline {
+  border: 2px solid #e63946;
+  color: #e63946;
+  background-color: transparent;
+}
+
+.btn--outline:hover,
+.btn--outline:focus {
+  background-color: #e63946;
   color: #fff;
 }
+
+.categories__search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.categories__search-input {
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 300px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.categories__search-input:focus {
+  border-color: #0070f3;
+}
+

@@ -1,0 +1,109 @@
+.icecream-page {
+  padding: 2rem;
+  background-color: #fffdfb;
+}
+
+.icecream-page h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.icecream-page p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.icecream-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.icecream-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fef6f0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.icecream-card:hover {
+  transform: translateY(-4px);
+}
+
+.icecream-info {
+  flex: 1;
+  padding-right: 1.5rem;
+}
+
+.icecream-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+  color: #333;
+}
+
+.icecream-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.icecream-details {
+  font-size: 0.95rem;
+  display: flex;
+  gap: 1.5rem;
+  color: #444;
+}
+
+.icecream-image-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+
+.icecream-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.icecream-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn--add {
+  background-color: #ffc107;
+  color: #333;
+}
+
+.btn--add:hover {
+  background-color: #e0a800;
+}
+
+.btn--buy {
+  background-color: #e91e63;
+  color: white;
+}
+
+.btn--buy:hover {
+  background-color: #c2185b;
+}
+

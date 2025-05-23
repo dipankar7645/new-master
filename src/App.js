@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 import Header from './components/Header';
 import Nav from './components/Nav';
@@ -10,12 +10,20 @@ import Footer from './components/Footer';
 import SignIn from './components/Signin';
 import Pizza from './components/Pizza';
 import Burger from './components/Burger';
+import IceCream from './components/IceCream';
 import Cart from './components/Cart';
 import Checkout from './components/CheckOut';
 import ThankYou from './components/ThankYou';
 import OrderSuccess from './components/OrderSuccess';
 import Payment from './components/Payment';
 import { CartProvider } from './components/CartContext';
+import User from './components/User';
+import { AuthProvider, useAuth } from './UserAuthContext';
+
+const ProtectedRoute = ({ children }) => {
+  const { user } = useAuth();
+  return user ? children : <Navigate to="/signin" />;
+};
 
 function AppContent() {
   const location = useLocation();
@@ -30,21 +38,23 @@ function AppContent() {
         <Route
           path="/"
           element={
-            <>
+            <ProtectedRoute>
               <Herosection />
               <Categories />
               <AllCategories />
-            </>
+            </ProtectedRoute>
           }
         />
-        <Route path="/pizza" element={<Pizza />} />
-         <Route path="/burger" element={<Burger />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/payment" element={<Payment />} />
-        <Route path="/order-success" element={<OrderSuccess />} />
-        <Route path="/thankyou" element={<ThankYou />} />
+        <Route path="/pizza" element={<ProtectedRoute><Pizza /></ProtectedRoute>} />
+        <Route path="/burger" element={<ProtectedRoute><Burger /></ProtectedRoute>} />
+        <Route path="/icecream" element={<ProtectedRoute><IceCream /></ProtectedRoute>} />
+        <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
+        <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
+        <Route path="/payment" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
+        <Route path="/order-success" element={<ProtectedRoute><OrderSuccess /></ProtectedRoute>} />
+        <Route path="/thankyou" element={<ProtectedRoute><ThankYou /></ProtectedRoute>} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/profile" element={<User />} />
       </Routes>
 
       {showFooter && <Footer />}
@@ -55,13 +65,13 @@ function AppContent() {
 function App() {
   return (
     <CartProvider>
-      <Router>
-        <AppContent />
-      </Router>
+      <AuthProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </AuthProvider>
     </CartProvider>
   );
 }
-
-
 
 export default App;

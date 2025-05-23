@@ -9,10 +9,11 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (item) => {
     setCartItems((prevItems) => {
-      const existing = prevItems.find((i) => i.name === item.name);
+      const existing = prevItems.find(i => i.name === item.name);
       if (existing) {
-        return prevItems.map((i) =>
-          i.name === item.name ? { ...i, quantity: item.quantity } : i
+        // Increment quantity if already in cart
+        return prevItems.map(i =>
+          i.name === item.name ? { ...i, quantity: i.quantity + (item.quantity || 1) } : i
         );
       } else {
         return [...prevItems, { ...item, quantity: item.quantity || 1 }];
@@ -21,26 +22,43 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (name) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.name !== name));
+    setCartItems(prevItems => prevItems.filter(item => item.name !== name));
   };
 
   const updateQuantity = (name, quantity) => {
     if (quantity <= 0) {
       removeFromCart(name);
     } else {
-      setCartItems((prevItems) =>
-        prevItems.map((item) =>
+      setCartItems(prevItems =>
+        prevItems.map(item =>
           item.name === name ? { ...item, quantity } : item
         )
       );
     }
   };
 
+  const increaseQuantity = (name) => {
+    setCartItems(prevItems =>
+      prevItems.map(item =>
+        item.name === name ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const decreaseQuantity = (name) => {
+    setCartItems(prevItems =>
+      prevItems
+        .map(item =>
+          item.name === name ? { ...item, quantity: item.quantity - 1 } : item
+        )
+        .filter(item => item.quantity > 0)
+    );
+  };
+
   const clearCart = () => {
     setCartItems([]);
   };
 
-  // Calculate total price
   const totalPrice = cartItems.reduce(
     (acc, item) => acc + item.price * item.quantity,
     0
@@ -53,6 +71,8 @@ export const CartProvider = ({ children }) => {
         addToCart,
         removeFromCart,
         updateQuantity,
+        increaseQuantity,
+        decreaseQuantity,
         clearCart,
         totalPrice,
       }}

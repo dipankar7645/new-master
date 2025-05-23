@@ -1,5 +1,6 @@
-// src/components/Auth.jsx
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useAuth } from '../UserAuthContext';
+import { useNavigate } from 'react-router-dom';
 import './SignIn.css';
 
 const Auth = () => {
@@ -7,36 +8,56 @@ const Auth = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { signin, signup } = useAuth();
+  const navigate = useNavigate();
+
+  const [error, setError] = useState('');
 
   const toggleMode = () => {
     setIsSignIn(!isSignIn);
     setName('');
     setEmail('');
     setPassword('');
+    setError('');
   };
+
+  useEffect(() => {
+    if (error) {
+      const timer = setTimeout(() => setError(''), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const passwordPattern =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-    if (!passwordPattern.test(password)) {
-      alert(
-        'Password must be at least 8 characters, with upper & lower case, a number, and a special character.'
-      );
-      return;
-    }
 
     if (isSignIn) {
-      console.log('Sign In with:', email, password);
+      const success = signin(email.trim(), password.trim());
+      if (success) {
+        navigate('/');
+      } else {
+        setError('Email or password is incorrect!');
+      }
     } else {
-      console.log('Sign Up with:', name, email, password);
+      if (!name.trim()) {
+        setError('Please enter your name');
+        return;
+      }
+      const success = signup(name.trim(), email.trim(), password.trim());
+      if (success) {
+        navigate('/');
+      } else {
+        setError('Signup failed');
+      }
     }
   };
 
   return (
     <div className="auth">
       <h2>{isSignIn ? 'Sign In' : 'Sign Up'}</h2>
+
+      {error && <div className="auth__error">{error}</div>}
+
       <form onSubmit={handleSubmit}>
         {!isSignIn && (
           <div className="auth__field">
@@ -46,7 +67,7 @@ const Auth = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Your name"
-              required
+              required={!isSignIn}
             />
           </div>
         )}
@@ -74,7 +95,10 @@ const Auth = () => {
           {isSignIn ? 'Sign In' : 'Sign Up'}
         </button>
       </form>
-      <p onClick={toggleMode} className="auth__toggle">
+      <p
+        onClick={toggleMode}
+        style={{ cursor: 'pointer', color: 'blue', textDecoration: 'underline' }}
+      >
         {isSignIn
           ? "Don't have an account? Sign Up"
           : 'Already have an account? Sign In'}
