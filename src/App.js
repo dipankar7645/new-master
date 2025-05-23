@@ -15,6 +15,7 @@ import Cart from './components/Cart';
 import Checkout from './components/CheckOut';
 import ThankYou from './components/ThankYou';
 import OrderSuccess from './components/OrderSuccess';
+import TrackOrder from './components/TrackOrder';
 import Payment from './components/Payment';
 import { CartProvider } from './components/CartContext';
 import User from './components/User';
@@ -51,6 +52,8 @@ function AppContent() {
         <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
         <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
         <Route path="/payment" element={<ProtectedRoute><Payment /></ProtectedRoute>} />
+         <Route path="/order-success" element={<OrderSuccess />} />
+        <Route path="/track-order" element={<TrackOrder />} />
         <Route path="/order-success" element={<ProtectedRoute><OrderSuccess /></ProtectedRoute>} />
         <Route path="/thankyou" element={<ProtectedRoute><ThankYou /></ProtectedRoute>} />
         <Route path="/signin" element={<SignIn />} />

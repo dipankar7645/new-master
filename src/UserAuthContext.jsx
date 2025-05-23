@@ -1,33 +1,21 @@
-// src/UserAuthContext.jsx
+// UserAuthContext.js
 import React, { createContext, useContext, useState } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({
+    name: 'Dipankar',
+    email: 'dipankar@example.com',
+    photoURL: '/images/default-profile.jpg',
+  });
 
-  // Signup stores name & email
-  const signup = (name, email, password) => {
-    setUser({ name, email });
-    return true;
-  };
-
-  // Signin uses email to create a name from email prefix
-  const signin = (email, password) => {
-    if (email && password) {
-      const nameFromEmail = email.split('@')[0];
-      setUser({ name: nameFromEmail, email });
-      return true;
-    }
-    return false;
-  };
-
-  const signout = () => {
-    setUser(null);
+  const updateProfilePhoto = (photoURL) => {
+    setUser((prev) => ({ ...prev, photoURL }));
   };
 
   return (
-    <AuthContext.Provider value={{ user, signup, signin, signout }}>
+    <AuthContext.Provider value={{ user, setUser, updateProfilePhoto }}>
       {children}
     </AuthContext.Provider>
   );

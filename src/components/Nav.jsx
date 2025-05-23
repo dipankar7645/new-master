@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaShoppingCart, FaUserCircle } from 'react-icons/fa';
+import { FaShoppingCart } from 'react-icons/fa';
 import { useCart } from '../components/CartContext';
 import { useAuth } from '../UserAuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -42,14 +42,18 @@ const Nav = () => {
           </button>
         ) : (
           <>
-            <div className="navbar__profile" onClick={() => navigate('/profile')} style={{cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px'}}>
-              <FaUserCircle size={28} />
+            <div className="navbar__profile" onClick={() => navigate('/profile')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <img
+                src={user.photoURL || '/images/default-profile.jpg'}
+                alt="User"
+                style={{ width: '32px', height: '32px', borderRadius: '50%' }}
+              />
               <span>Hello, {user.name}</span>
             </div>
             <button className="btn btn--outline" onClick={handleSignOut}>
               Sign Out
             </button>
-            <div className="navbar__cart" onClick={() => navigate('/cart')} style={{position: 'relative', cursor: 'pointer'}}>
+            <div className="navbar__cart" onClick={() => navigate('/cart')} style={{ position: 'relative', cursor: 'pointer' }}>
               <FaShoppingCart size={24} />
               {totalQuantity > 0 && <span className="cart-count">{totalQuantity}</span>}
             </div>

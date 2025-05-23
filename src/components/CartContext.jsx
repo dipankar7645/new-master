@@ -9,11 +9,12 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (item) => {
     setCartItems((prevItems) => {
-      const existing = prevItems.find(i => i.name === item.name);
-      if (existing) {
-        // Increment quantity if already in cart
+      const existingItem = prevItems.find(i => i.name === item.name);
+      if (existingItem) {
         return prevItems.map(i =>
-          i.name === item.name ? { ...i, quantity: i.quantity + (item.quantity || 1) } : i
+          i.name === item.name
+            ? { ...i, quantity: i.quantity + (item.quantity || 1) }
+            : i
         );
       } else {
         return [...prevItems, { ...item, quantity: item.quantity || 1 }];
@@ -22,15 +23,17 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (name) => {
-    setCartItems(prevItems => prevItems.filter(item => item.name !== name));
+    setCartItems((prevItems) =>
+      prevItems.filter((item) => item.name !== name)
+    );
   };
 
   const updateQuantity = (name, quantity) => {
     if (quantity <= 0) {
       removeFromCart(name);
     } else {
-      setCartItems(prevItems =>
-        prevItems.map(item =>
+      setCartItems((prevItems) =>
+        prevItems.map((item) =>
           item.name === name ? { ...item, quantity } : item
         )
       );
@@ -38,20 +41,20 @@ export const CartProvider = ({ children }) => {
   };
 
   const increaseQuantity = (name) => {
-    setCartItems(prevItems =>
-      prevItems.map(item =>
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
         item.name === name ? { ...item, quantity: item.quantity + 1 } : item
       )
     );
   };
 
   const decreaseQuantity = (name) => {
-    setCartItems(prevItems =>
+    setCartItems((prevItems) =>
       prevItems
-        .map(item =>
+        .map((item) =>
           item.name === name ? { ...item, quantity: item.quantity - 1 } : item
         )
-        .filter(item => item.quantity > 0)
+        .filter((item) => item.quantity > 0)
     );
   };
 
@@ -60,7 +63,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const totalPrice = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
+    (total, item) => total + item.price * item.quantity,
     0
   );
 

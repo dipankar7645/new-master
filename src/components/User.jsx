@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import { useAuth } from '../UserAuthContext';
+import { useNavigate } from 'react-router-dom';
 import './User.css';
 
 const User = () => {
-  const { user } = useAuth();
+  const { user, setUser, updateProfilePhoto } = useAuth();
+  const navigate = useNavigate();
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [preview, setPreview] = useState(user?.photoURL || '/images/default-profile.jpg');
-  const [savedImage, setSavedImage] = useState(preview);
 
   const [formData, setFormData] = useState({
-    firstName: user?.firstName || '',
-    lastName: user?.lastName || '',
+    firstName: user?.name || '',
     phone: user?.phone || '',
     address: user?.address || '',
     email: user?.email || '',
@@ -22,23 +22,34 @@ const User = () => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      const imageUrl = URL.createObjectURL(file);
       setSelectedImage(file);
-      setPreview(URL.createObjectURL(file));
+      setPreview(imageUrl);
     }
   };
 
   const handleChange = (e) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
   const handleSaveProfile = () => {
-    // For now we just update the savedImage locally
+    setUser((prevUser) => ({
+      ...prevUser,
+      name: formData.firstName,
+      email: formData.email,
+      phone: formData.phone,
+      address: formData.address,
+      country: formData.country,
+      state: formData.state,
+      photoURL: selectedImage ? preview : prevUser.photoURL,
+    }));
+
     if (selectedImage) {
-      setSavedImage(preview);
+      updateProfilePhoto(preview);
     }
 
-    // Optionally, you can save formData to a backend or global state
-    alert("Profile updated!");
+    alert('💣 Boom! Profile successfully updated!');
+    navigate('/');
   };
 
   if (!user) return <p>Please sign in to view your profile.</p>;
@@ -46,14 +57,9 @@ const User = () => {
   return (
     <div className="profile-container">
       <div className="profile-left">
-        <img src={savedImage} alt="Profile" className="profile-image" />
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-          className="upload-btn"
-        />
-        <h3>{formData.firstName || user.name}</h3>
+        <img src={preview} alt="Profile" className="profile-image" />
+        <input type="file" accept="image/*" onChange={handleImageChange} className="upload-btn" />
+        <h3>{formData.firstName}</h3>
         <p>{formData.email}</p>
       </div>
 
@@ -61,7 +67,6 @@ const User = () => {
         <h2>Profile Settings</h2>
         <div className="profile-form">
           <input name="firstName" type="text" placeholder="First Name" value={formData.firstName} onChange={handleChange} />
-          <input name="lastName" type="text" placeholder="Last Name" value={formData.lastName} onChange={handleChange} />
           <input name="phone" type="text" placeholder="Phone Number" value={formData.phone} onChange={handleChange} />
           <input name="address" type="text" placeholder="Address" value={formData.address} onChange={handleChange} />
           <input name="email" type="email" placeholder="Email ID" value={formData.email} onChange={handleChange} />
