@@ -37,6 +37,8 @@ const Categories = () => {
     { icon: <FaCheese />, label: 'Cake', image: '/images/cake.jpeg' }
   ];
 
+  const visibleCount = showAllText ? categoryList.length : 6;
+
   const handleCategoryClick = (label) => {
     if (label === 'Pizza') {
       navigate('/pizza');
@@ -44,9 +46,7 @@ const Categories = () => {
       navigate('/burger');
     } else if (label === 'Ice Cream') {
       navigate('/icecream');
-    }
-    // Add more routes if needed here
-    else {
+    } else {
       alert('Category page not implemented yet.');
     }
   };
@@ -54,10 +54,7 @@ const Categories = () => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     const search = searchTerm.trim().toLowerCase();
-
-    // Find category matching the search term (case insensitive)
     const foundCategory = categoryList.find(cat => cat.label.toLowerCase() === search);
-
     if (foundCategory) {
       handleCategoryClick(foundCategory.label);
     } else {
@@ -83,10 +80,10 @@ const Categories = () => {
       </form>
 
       <div className="categories__list">
-        {categoryList.map((cat, index) => (
+        {categoryList.slice(0, visibleCount).map((cat, index) => (
           <div
             key={index}
-            className="category__item"
+            className={`category__item ${showAllText ? 'square' : 'rounded'}`}
             onClick={() => handleCategoryClick(cat.label)}
             style={{ cursor: 'pointer' }}
           >
