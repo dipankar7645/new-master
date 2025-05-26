@@ -1,0 +1,173 @@
+/* Dosa.css */
+.dosa-section {
+  padding: 2rem;
+  background: #fdf7ff;
+}
+
+.back-button {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #2c3e50;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.dosa-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #8e44ad;
+}
+
+.dosa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: 20%;
+  margin-right: 30%;
+}
+
+.dosa-card {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  gap: 1.5rem;
+}
+
+.dosa-left {
+  flex: 1;
+}
+
+.dosa-title-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.dosa-name {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.dosa-price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.dosa-rating {
+  font-size: 0.9rem;
+  color: #f1c40f;
+  margin-bottom: 0.4rem;
+}
+
+.dosa-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.dosa-right {
+  width: 110px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.dosa-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.add-button {
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #9b59b6;
+  color: white;
+  padding: 6px 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.quantity-controls {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-button {
+  background-color: #9b59b6;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.quantity-count {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.dosa-search {
+  flex: 1 1 250px;
+  min-width: 200px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  margin-left: 240px;
+}
+
+.dosa-search:focus {
+  border-color: #9b59b6;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.rating-filter {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.rating-filter button {
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.rating-filter button:hover {
+  border-color: #9b59b6;
+  background-color: #f6e5ff;
+}
+
+.rating-filter button.active {
+  border: 2px solid #9b59b6;
+  background-color: #f2d9ff;
+  font-weight: 700;
+}

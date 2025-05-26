@@ -8,35 +8,35 @@ const IceCream = () => {
   const iceCreamItems = [
     {
       name: 'Vanilla Delight',
-      image: '/images/icecream1.jpg',
+      image: '/IceCream/icecream1.jpg',
       price: 120,
       rating: 4.5,
       description: 'Classic vanilla ice cream with a rich creamy flavor.'
     },
     {
       name: 'Chocolate Heaven',
-      image: '/images/icecream2.jpg',
+      image: '/IceCream/icecream2.jpg',
       price: 150,
       rating: 4.8,
       description: 'A chocoholic’s dream with deep cocoa and fudge swirls.'
     },
     {
       name: 'Strawberry Swirl',
-      image: '/images/icecream3.jpg',
+      image: '/IceCream/icecream3.jpg',
       price: 130,
       rating: 4.2,
       description: 'Sweet strawberry ice cream with real fruit swirls.'
     },
     {
       name: 'Mango Magic',
-      image: '/images/icecream4.jpg',
+      image: '/IceCream/icecream4.jpg',
       price: 140,
       rating: 4.6,
       description: 'Tropical mango ice cream with a tangy twist.'
     },
     {
       name: 'Blueberry Blast',
-      image: '/images/icecream5.jpg',
+      image: '/IceCream/icecream5.jpg',
       price: 160,
       rating: 4.7,
       description: 'Bursting with blueberry flavor and creamy texture.'

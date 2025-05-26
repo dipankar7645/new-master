@@ -1,0 +1,149 @@
+/* Vegan.css */
+.vegan-section {
+  padding: 2rem;
+  background: #f9fff9;
+}
+
+.back-button {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  color: #28a745;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.vegan-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.vegan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: 20%;
+  margin-right: 30%;
+}
+
+.vegan-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  gap: 1.5rem;
+}
+
+.vegan-left {
+  flex: 1;
+}
+
+.vegan-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.vegan-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.vegan-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.vegan-rating {
+  font-size: 0.9rem;
+  color: #f39c12;
+  margin-bottom: 0.4rem;
+}
+
+.vegan-description {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.4;
+  max-width: 95%;
+}
+
+.vegan-right {
+  width: 110px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.vegan-image {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.add-button {
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #28a745;
+  color: white;
+  padding: 6px 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.quantity-controls {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-button {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.quantity-button:hover {
+  background-color: #218838;
+}
+
+.quantity-count {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.vegan-search {
+  flex: 1 1 250px;
+  min-width: 200px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 8px;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease;
+  margin-left: 240px;
+}
+
+.vegan-search:focus {
+  border-color: #28a745;
+}

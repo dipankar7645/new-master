@@ -7,7 +7,7 @@ const allBurgers = [
   {
     name: 'Classic Burger',
     price: 120,
-    image: '/images/classic-burger.jpg',
+    image: '/Burgers/classic-burger.jpg',
     rating: 4.5,
     reviews: 10,
     description: 'Juicy patty with classic toppings and soft buns.',
@@ -15,7 +15,7 @@ const allBurgers = [
   {
     name: 'Cheese Burger',
     price: 150,
-    image: '/images/cheese-burger.jpg',
+    image: '/Burgers/cheese-burger.jpg',
     rating: 5.0,
     reviews: 8,
     description: 'Loaded with cheese and fresh lettuce.',
@@ -23,7 +23,7 @@ const allBurgers = [
   {
     name: 'Veggie Burger',
     price: 100,
-    image: '/images/veggie-burger.jpg',
+    image: '/Burgers/veggie-burger.jpg',
     rating: 4.2,
     reviews: 12,
     description: 'Crispy veggie patty with special sauce.',
@@ -31,7 +31,7 @@ const allBurgers = [
   {
     name: 'Deluxe Burger',
     price: 180,
-    image: '/images/deluxe-burger.jpg',
+    image: '/Burgers/deluxe-burger.jpg',
     rating: 4.8,
     reviews: 15,
     description: 'Double patty, cheese, and extra toppings.',

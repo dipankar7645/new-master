@@ -46,7 +46,43 @@ const Categories = () => {
       navigate('/burger');
     } else if (label === 'Ice Cream') {
       navigate('/icecream');
-    } else {
+    } else if (label === 'Coffee') {
+      navigate('/coffee');
+    } else if (label === 'Vegan') {
+      navigate('/vegan');
+    }
+    else if (label === 'Chicken') {
+      navigate('/chicken');
+    } else if (label === 'Thali') {
+      navigate('/thali');
+    } else if (label === 'Fried Rice') {
+      navigate('/friedrice');
+    } else if (label === 'North Indian') {
+      navigate('/northindian');
+    } else if (label === 'Dosa') {
+      navigate('/dosa');
+    } else if (label === 'Rolls') {
+      navigate('/rolls');
+    } else if (label === 'Momos') {
+      navigate('/momos');
+    } else if (label === 'Lassi') {
+      navigate('/lassi');
+    } else if (label === 'Tea') {
+      navigate('/tea');
+    } else if (label === 'Rasmalai') {
+      navigate('/rasmalai');
+    } else if (label === 'Cold coffee') {
+      navigate('/coldcoffee');
+    } else if (label === 'Biryani') {
+      navigate('/biryani');
+    } else if (label === 'Cutlet') {
+      navigate('/cutlet');
+    } else if (label === 'Vada Pav') {
+      navigate('/vadapav');
+    } else if (label === 'Cake') {
+      navigate('/cake');
+    }
+    else {
       alert('Category page not implemented yet.');
     }
   };

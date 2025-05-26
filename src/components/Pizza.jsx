@@ -4,13 +4,13 @@ import { useCart } from './CartContext';
 import './Pizza.css';
 
 const pizzaTypes = [
-  { name: 'Margherita', image: '/images/pizza1.jpg', description: 'Classic cheese & tomato', rating: 4, price: 199 },
-  { name: 'Pepperoni', image: '/images/pizza2.jpg', description: 'Spicy pepperoni with mozzarella', rating: 5, price: 249 },
-  { name: 'Veggie Supreme', image: '/images/pizza3.jpg', description: 'Loaded with veggies and cheese', rating: 4, price: 229 },
-  { name: 'Paneer Tikka', image: '/images/pizza4.jpg', description: 'Spiced paneer with onions & capsicum', rating: 5, price: 259 },
-  { name: 'Paneer Tandoori', image: '/images/pizza5.jpg', description: 'Tandoori paneer with herbs', rating: 4, price: 279 },
-  { name: 'Chicken Crust', image: '/images/pizza6.jpg', description: 'Cheesy chicken crust delight', rating: 5, price: 289 },
-  { name: 'Onion Paneer', image: '/images/pizza7.jpg', description: 'Onions, paneer & cheese burst', rating: 4, price: 239 },
+  { name: 'Margherita', image: '/Pizza/pizza1.jpg', description: 'Classic cheese & tomato', rating: 4, price: 199 },
+  { name: 'Pepperoni', image: '/Pizza/pizza2.jpg', description: 'Spicy pepperoni with mozzarella', rating: 5, price: 249 },
+  { name: 'Veggie Supreme', image: '/Pizza/pizza3.jpg', description: 'Loaded with veggies and cheese', rating: 4, price: 229 },
+  { name: 'Paneer Tikka', image: '/Pizza/pizza4.jpg', description: 'Spiced paneer with onions & capsicum', rating: 5, price: 259 },
+  { name: 'Paneer Tandoori', image: '/Pizza/pizza5.jpg', description: 'Tandoori paneer with herbs', rating: 4, price: 279 },
+  { name: 'Chicken Crust', image: '/Pizza/pizza6.jpg', description: 'Cheesy chicken crust delight', rating: 5, price: 289 },
+  { name: 'Onion Paneer', image: '/Pizza/pizza7.jpg', description: 'Onions, paneer & cheese burst', rating: 4, price: 239 },
 ];
 
 const Pizza = () => {

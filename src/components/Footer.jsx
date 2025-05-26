@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__container">
         <div className="footer__section">
-          <h2 className="footer__logo">FoodieExpress</h2>
+          <h2 className="footer__logo">CraveCart</h2>
           <p>Delivering delicious meals at your doorstep.</p>
         </div>
         <div className="footer__section">
@@ -37,7 +37,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer__bottom">
-        <p>&copy; {new Date().getFullYear()} CopyRight-FoodieExpress. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} CopyRight-CraveCart. All rights reserved.</p>
       </div>
     </footer>
   );
