@@ -5,12 +5,12 @@ import { useCart } from './CartContext';
 import './Chicken.css';
 
 const chickenItems = [
-  { name: 'Grilled Chicken', image: '/images/chicken1.jpg', description: 'Juicy grilled chicken with herbs', rating: 5, price: 249 },
-  { name: 'Chicken Curry', image: '/images/chicken2.jpg', description: 'Traditional spicy Indian chicken curry', rating: 4, price: 229 },
-  { name: 'Fried Chicken', image: '/images/chicken3.jpg', description: 'Crispy fried chicken with spices', rating: 4, price: 199 },
-  { name: 'Butter Chicken', image: '/images/chicken4.jpg', description: 'Creamy butter chicken with naan', rating: 5, price: 259 },
-  { name: 'Chicken Biryani', image: '/images/chicken5.jpg', description: 'Aromatic rice with marinated chicken', rating: 5, price: 239 },
-  { name: 'Chicken Wrap', image: '/images/chicken6.jpg', description: 'Grilled chicken in a soft tortilla wrap', rating: 3, price: 179 },
+  { name: 'Grilled Chicken', image: '/Chicken/chicken1.jpg', description: 'Juicy grilled chicken with herbs', rating: 5, price: 249 },
+  { name: 'Chicken Curry', image: '/Chicken/chicken2.jpg', description: 'Traditional spicy Indian chicken curry', rating: 4, price: 229 },
+  { name: 'Fried Chicken', image: '/Chicken/chicken3.jpg', description: 'Crispy fried chicken with spices', rating: 4, price: 199 },
+  { name: 'Butter Chicken', image: '/Chicken/chicken4.jpg', description: 'Creamy butter chicken with naan', rating: 5, price: 259 },
+  { name: 'Chicken Biryani', image: '/Chicken/chicken5.jpg', description: 'Aromatic rice with marinated chicken', rating: 5, price: 239 },
+  { name: 'Chicken Wrap', image: '/Chicken  /chicken6.jpg', description: 'Grilled chicken in a soft tortilla wrap', rating: 3, price: 179 },
 ];
 
 const Chicken = () => {

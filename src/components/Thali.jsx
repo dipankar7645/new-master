@@ -5,12 +5,12 @@ import { useCart } from './CartContext';
 import './Thali.css';
 
 const thaliItems = [
-  { name: 'North Indian Thali', image: '/images/thali1.jpg', description: 'Includes dal, roti, rice, sabzi, and sweets', rating: 5, price: 199 },
-  { name: 'South Indian Thali', image: '/images/thali2.jpg', description: 'Includes rice, sambhar, rasam, papad, and pickle', rating: 4, price: 189 },
-  { name: 'Gujarati Thali', image: '/images/thali3.jpg', description: 'Sweet and savory dishes like dhokla, kadhi, thepla', rating: 4, price: 179 },
-  { name: 'Rajasthani Thali', image: '/images/thali4.jpg', description: 'Gatte ki sabzi, dal baati, churma and more', rating: 5, price: 209 },
-  { name: 'Bengali Thali', image: '/images/thali5.jpg', description: 'Fish curry, rice, shukto, chutney and sweet', rating: 3, price: 199 },
-  { name: 'Mini Thali', image: '/images/thali6.jpg', description: 'Compact thali with essentials - dal, rice, roti', rating: 3, price: 129 },
+  { name: 'North Indian Thali', image: '/Thali/thali1.jpg', description: 'Includes dal, roti, rice, sabzi, and sweets', rating: 5, price: 199 },
+  { name: 'South Indian Thali', image: '/Thali/thali2.jpg', description: 'Includes rice, sambhar, rasam, papad, and pickle', rating: 4, price: 189 },
+  { name: 'Gujarati Thali', image: '/Thali/thali3.jpg', description: 'Sweet and savory dishes like dhokla, kadhi, thepla', rating: 4, price: 179 },
+  { name: 'Rajasthani Thali', image: '/Thali/thali4.jpg', description: 'Gatte ki sabzi, dal baati, churma and more', rating: 5, price: 209 },
+  { name: 'Bengali Thali', image: '/Thali/thali5.jpg', description: 'Fish curry, rice, shukto, chutney and sweet', rating: 3, price: 199 },
+  { name: 'Mini Thali', image: '/Thali/thali6.jpg', description: 'Compact thali with essentials - dal, rice, roti', rating: 3, price: 129 },
 ];
 
 const Thali = () => {

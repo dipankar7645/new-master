@@ -5,13 +5,13 @@ import { useCart } from './CartContext';
 import './Coffee.css';
 
 const coffeeTypes = [
-  { name: 'Espresso', image: '/images/coffee1.jpg', description: 'Strong and bold shot', rating: 5, price: 149 },
-  { name: 'Cappuccino', image: '/images/coffee2.jpg', description: 'Espresso with steamed milk foam', rating: 4, price: 169 },
-  { name: 'Latte', image: '/images/coffee3.jpg', description: 'Smooth espresso with milk', rating: 4, price: 179 },
-  { name: 'Mocha', image: '/images/coffee4.jpg', description: 'Chocolate-flavored coffee delight', rating: 5, price: 199 },
-  { name: 'Cold Brew', image: '/images/coffee5.jpg', description: 'Iced slow brewed coffee', rating: 4, price: 159 },
-  { name: 'Americano', image: '/images/coffee6.jpg', description: 'Espresso diluted with hot water', rating: 3, price: 139 },
-  { name: 'Macchiato', image: '/images/coffee7.jpg', description: 'Espresso with a dash of milk foam', rating: 4, price: 169 },
+  { name: 'Espresso', image: '/Coffee/coffee1.jpg', description: 'Strong and bold shot', rating: 5, price: 149 },
+  { name: 'Cappuccino', image: '/Coffee/coffee2.jpg', description: 'Espresso with steamed milk foam', rating: 4, price: 169 },
+  { name: 'Latte', image: '/Coffee/coffee3.jpg', description: 'Smooth espresso with milk', rating: 4, price: 179 },
+  { name: 'Mocha', image: '/Coffee/coffee4.jpg', description: 'Chocolate-flavored coffee delight', rating: 5, price: 199 },
+  { name: 'Cold Brew', image: '/Coffee/coffee5.jpg', description: 'Iced slow brewed coffee', rating: 4, price: 159 },
+  { name: 'Americano', image: '/Coffee/coffee6.jpg', description: 'Espresso diluted with hot water', rating: 3, price: 139 },
+  { name: 'Macchiato', image: '/Coffee/coffee7.jpg', description: 'Espresso with a dash of milk foam', rating: 4, price: 169 },
 ];
 
 const Coffee = () => {

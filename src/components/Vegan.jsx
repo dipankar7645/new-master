@@ -5,12 +5,12 @@ import { useCart } from './CartContext';
 import './Vegan.css';
 
 const veganItems = [
-  { name: 'Vegan Burger', image: '/images/vegan1.jpg', description: 'Plant-based patty with lettuce and tomato', rating: 5, price: 199 },
-  { name: 'Tofu Salad', image: '/images/vegan2.jpg', description: 'Fresh greens with grilled tofu cubes', rating: 4, price: 179 },
-  { name: 'Vegan Wrap', image: '/images/vegan3.jpg', description: 'Tortilla filled with veggies and hummus', rating: 4, price: 159 },
-  { name: 'Chickpea Bowl', image: '/images/vegan4.jpg', description: 'Chickpeas, quinoa, and greens bowl', rating: 5, price: 189 },
-  { name: 'Grilled Veggies', image: '/images/vegan5.jpg', description: 'Seasonal vegetables grilled to perfection', rating: 3, price: 169 },
-  { name: 'Vegan Pizza', image: '/images/vegan6.jpg', description: 'Cheese-less pizza with fresh veggies', rating: 4, price: 199 },
+  { name: 'Vegan Burger', image: '/Vegan/vegan1.jpg', description: 'Plant-based patty with lettuce and tomato', rating: 5, price: 199 },
+  { name: 'Tofu Salad', image: '/Vegan/vegan2.jpg', description: 'Fresh greens with grilled tofu cubes', rating: 4, price: 179 },
+  { name: 'Vegan Wrap', image: '/Vegan/vegan3.jpg', description: 'Tortilla filled with veggies and hummus', rating: 4, price: 159 },
+  { name: 'Chickpea Bowl', image: '/Vegan/vegan4.jpg', description: 'Chickpeas, quinoa, and greens bowl', rating: 5, price: 189 },
+  { name: 'Grilled Veggies', image: '/Vegan/vegan5.jpg', description: 'Seasonal vegetables grilled to perfection', rating: 3, price: 169 },
+  { name: 'Vegan Pizza', image: '/Vegan/vegan6.jpg', description: 'Cheese-less pizza with fresh veggies', rating: 4, price: 199 },
 ];
 
 const Vegan = () => {

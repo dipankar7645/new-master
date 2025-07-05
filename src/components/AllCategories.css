@@ -1,23 +1,76 @@
 .all-categories {
-  padding: 30px;
+  padding: 5vw;
   background-color: #f0f4f8;
 }
 
 .section-title {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 5vw;
+  margin-bottom: 4vw;
   color: #333;
 }
 
+/* Responsive Grid for Categories */
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 16px;
   margin-bottom: 40px;
 }
 
+/* Responsive Grid for Products */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
+}
+
+/* MEDIA QUERIES */
+
+/* Tablets (Portrait and Landscape) */
+@media (min-width: 600px) {
+  .section-title {
+    font-size: 20px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+/* Laptops */
+@media (min-width: 900px) {
+  .section-title {
+    font-size: 22px;
+  }
+
+  .all-categories {
+    padding: 40px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}
+
+/* Desktops */
+@media (min-width: 1200px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .categories-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }

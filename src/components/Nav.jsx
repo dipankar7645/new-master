@@ -44,11 +44,11 @@ const Nav = () => {
           <>
             <div className="navbar__profile" onClick={() => navigate('/profile')} style={{ cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <img
-                src={user.photoURL || '/images/default-profile.jpg'}
+                src={user.photoURL || '/public/images/profile.jpg'}
                 alt="User"
                 style={{ width: '32px', height: '32px', borderRadius: '50%' }}
               />
-              <span>Hello, {user.name}</span>
+              <span> {user.name}</span>
             </div>
             <button className="btn btn--outline" onClick={handleSignOut}>
               Sign Out

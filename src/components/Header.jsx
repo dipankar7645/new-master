@@ -8,8 +8,8 @@ const Header = () => {
   const navigate = useNavigate();
 
   const handleSignOut = () => {
-    signout();
-    navigate('/signin');
+    signout(); // Call the signout function from context
+    navigate('/signin'); // Redirect to sign-in page
   };
 
   return (
@@ -18,7 +18,7 @@ const Header = () => {
         <Link to="/">Home</Link> |{' '}
         {user ? (
           <>
-            <span>Welcome, {user.name || user.email}</span> |{' '}
+            <span>Welcome, {user.name || user.email || 'User'}</span> |{' '}
             <Link to="/profile">Profile</Link> |{' '}
             <button onClick={handleSignOut}>Sign Out</button>
           </>

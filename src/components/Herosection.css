@@ -3,41 +3,54 @@
   justify-content: space-between;
   align-items: center;
   padding: 3rem;
-  background: #f8f9fa;
+  background: #fcfdff;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .hero__content {
+  flex: 1 1 300px;
   max-width: 500px;
 }
 
 .hero__quote {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: #333;
 }
 
 .hero__subtext {
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
+  color: #666;
 }
 
 .hero__button {
-  padding: 0.75rem 1.5rem;
-  background-color: #ff6347;
+  padding: 0.8rem 1.5rem;
+  background-color: #ff5722;
   color: #fff;
   border: none;
-  border-radius: 30px;
+  border-radius: 8px;
+  text-decoration: none;
   font-size: 1rem;
-  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hero__button:hover {
+  background-color: #e64a19;
+}
+
+.hero__image {
+  flex: 1 1 300px;
 }
 
 .hero__image img {
-  width: 300px;
+  width: 100%;
   height: auto;
   border-radius: 12px;
   object-fit: cover;
-  transition: all 0.5s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
 .restaurant__section {
@@ -93,9 +106,7 @@
   color: #333;
 }
 
-
-
-
+/* Animation */
 @keyframes fadeIn {
   from {
     opacity: 0.2;
@@ -107,38 +118,53 @@
   }
 }
 
-.hero__quote {
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: #333;
+/* ======================== */
+/*    RESPONSIVE STYLES    */
+/* ======================== */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .hero__quote {
+    font-size: 2rem;
+  }
+
+  .hero__subtext {
+    font-size: 1.1rem;
+  }
+
+  .hero__image {
+    order: -1; /* Image appears above content */
+    width: 100%;
+  }
 }
 
-.hero__subtext {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-  color: #666;
-}
+/* Mobile */
+@media (max-width: 600px) {
+  .hero__quote {
+    font-size: 1.8rem;
+  }
 
-.hero__button {
-  padding: 0.8rem 1.5rem;
-  background-color: #ff5722;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background-color 0.3s;
-}
+  .hero__subtext {
+    font-size: 1rem;
+  }
 
-.hero__image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  animation: fadeIn 0.5s ease-in-out;
-}
+  .restaurant__card {
+    width: 100%;
+    max-width: 300px;
+  }
 
-.hero__button:hover {
-  background-color: #e64a19;
+  .restaurant__title {
+    font-size: 1.5rem;
+  }
+
+  .restaurant__category h3 {
+    font-size: 1.1rem;
+  }
 }
